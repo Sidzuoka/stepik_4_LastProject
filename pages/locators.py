@@ -6,6 +6,5 @@ class MainPageLocators:
 
 
 class LoginPageLocators:
-    LOGIN_LINK = (By.ID, "registration_link")
     LOGIN_FORM = (By.ID, "login_form")
     REGISTRATION_FORM = (By.ID, "register_form")
