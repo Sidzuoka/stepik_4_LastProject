@@ -1,6 +1,5 @@
 from pages.base_page import BasePage
 from pages.locators import LoginPageLocators
-from pages.locators import MainPageLocators
 
 
 class LoginPage(BasePage):
@@ -8,11 +7,6 @@ class LoginPage(BasePage):
         self.should_be_login_url()
         self.should_be_login_form()
         self.should_be_register_form()
-
-    def go_to_login_page(self):
-        login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
-        # передали именно пару, и этот кортеж нужно распаковать
-        login_link.click()
 
     def should_be_login_url(self):
         assert "login" in self.browser.current_url, "Not correct url"
