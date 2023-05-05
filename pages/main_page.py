@@ -1,12 +1,12 @@
 from pages.base_page import BasePage
-from pages.locators import MainPageLocators
+
 
 
 class MainPage(BasePage):
-    def go_to_login_page(self):
-        login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
-        # передали именно пару, и этот кортеж нужно распаковать
-        login_link.click()
-
-    def should_be_login_link(self):
-        assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
+    class MainPage(BasePage):
+        # не осталось никаких м-дов, поэтому оставили заглушку
+        # __init__ м-д вызывается при создании объекта
+        # ключевое слово super вызывает конструктор класса предка и передает ему все аргументы,
+        # кот. передали в конструктор MainPage
+        def __init__(self, *args, **kwargs):
+            super(MainPage, self).__init__(*args, **kwargs)
